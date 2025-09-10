@@ -41,12 +41,11 @@
     <button type="button" id="mudarTexto">Mudar Texto</button>
 
 
-    <script type="module">
+    <script>
         const paragrafo = document.getElementById("paragrafo");
         const mudarTexto = document.getElementById("mudarTexto");
 
         mudarTexto.onclick = async function (event) {
-            event.preventDefault();
             paragrafo.textContent = "O texto foi alterado!";
         }
     </script>

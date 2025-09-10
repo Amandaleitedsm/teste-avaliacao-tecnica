@@ -15,7 +15,7 @@ CREATE TABLE vendas (
     FOREIGN KEY (id_produto) REFERENCES produtos(id)
 );
 
-
+# SEGUE INSERTS PARA TESTE
 INSERT INTO produtos (id, nome_produto, preco) VALUES
 (1, 'Notebook Dell Inspiron', 3500.00),
 (2, 'Smartphone Samsung A54', 1800.00),
@@ -33,5 +33,5 @@ INSERT INTO vendas (id, id_produto, quantidade) VALUES
 SELECT p.nome_produto, v.quantidade
 FROM vendas v
 LEFT JOIN produtos p ON p.id = v.id_produto
-GROUP BY v.id
+GROUP BY p.nome_produto
 ORDER BY quantidade DESC;

@@ -15,7 +15,7 @@ CREATE TABLE vendas (
     FOREIGN KEY (id_produto) REFERENCES produtos(id)
 );
 
-
+# SEGUE INSERTS PARA TESTE
 INSERT INTO produtos (id, nome_produto, preco) VALUES
 (1, 'Notebook Dell Inspiron', 3500.00),
 (2, 'Smartphone Samsung A54', 1800.00),
@@ -31,8 +31,9 @@ INSERT INTO vendas (id, id_produto, quantidade) VALUES
 (5, 4, 1);   
 
 CREATE VIEW relatorio_vendas_diarias AS
-SELECT v.data_venda, p.nome_produto, (p.preco * v.quantidade) AS total_faturado
+SELECT DATE(v.data_venda), p.nome_produto, SUM(p.preco * v.quantidade) AS total_faturado
 FROM vendas v
-LEFT JOIN produtos p ON p.id = v.id_produto;
+LEFT JOIN produtos p ON p.id = v.id_produto
+GROUP BY DATE(v.data_venda), p.nome_produto;
 
 SELECT * FROM relatorio_vendas_diarias;
