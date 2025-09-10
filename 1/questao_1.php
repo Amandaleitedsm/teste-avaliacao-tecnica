@@ -5,7 +5,7 @@ function calcularTotalComDesconto(array $precos, float $desconto){
     $totalDesconto = $total * (1 - $desconto);
     return $totalDesconto;
 }
-
+/* --- Código para testes manuais ---
 $values = [];
 $desconto = 0.0;
 
@@ -31,4 +31,4 @@ while (true){
 }
 
 $totalDesconto = calcularTotalComDesconto($values, $desconto);
-echo "Valor total com desconto: R$ {$totalDesconto}";
+echo "Valor total com desconto: R$ {$totalDesconto}"; */
