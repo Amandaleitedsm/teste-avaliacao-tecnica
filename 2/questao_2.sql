@@ -30,7 +30,7 @@ INSERT INTO vendas (id, id_produto, quantidade) VALUES
 (4, 3, 2),   
 (5, 4, 1);   
 
-SELECT p.nome_produto, v.quantidade
+SELECT p.nome_produto, SUM(v.quantidade)
 FROM vendas v
 LEFT JOIN produtos p ON p.id = v.id_produto
 GROUP BY p.nome_produto
