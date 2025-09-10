@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar texto</title>
+</head>
+<style>
+    html, body {
+        height: 100%;         
+        margin: 0;            
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        justify-content: center; 
+    }
+
+    p {
+        font-size: 30px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    button[type="button"] {
+        height: fit-content;
+        width: 150px;
+        padding: 5px;
+        color: rgb(0, 0, 0);
+        border-radius: 15px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    button:hover {
+        background-color: rgb(0, 89, 255);
+        color: rgb(255, 255, 255);
+    }
+
+</style>
+<body>
+    <p id="paragrafo">Olá, mundo!</p>
+    <button type="button" id="mudarTexto">Mudar Texto</button>
+
+
+    <script type="module">
+        const paragrafo = document.getElementById("paragrafo");
+        const mudarTexto = document.getElementById("mudarTexto");
+
+        mudarTexto.onclick = async function (event) {
+            event.preventDefault();
+            paragrafo.textContent = "O texto foi alterado!";
+        }
+    </script>
+</body>
+</html>
